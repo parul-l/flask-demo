@@ -18,12 +18,13 @@ def index():
     else:
         ticker_input = request.form['ticker_symbol']
         df_data = gd.get_data_df(ticker=ticker_input)
+
         if len(df_data) > 0:
             script, div = psp.get_plot_ticker_components(
                 ticker=ticker_input,
                 df_data=df_data
             )
-
+            
             return render_template('plot_template.html', script=script, div=div)
         else:
             return redirect('/error_page')
