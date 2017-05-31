@@ -9,39 +9,8 @@ from bokeh.embed import components
 from html_template import html
 
 
-# def plot_ticker(ticker, df_data):
-#     plot_title = 'Last Month ' + ticker + ' Closing Price'
-#     # output_file('stocks_timeseries.html', title=ticker + ' closing stock price')
-# 
-#     p = TimeSeries(df_data, legend=True, title=plot_title, xlabel='Date', ylabel='Stock Prices')
-#     p.title.text_font_size = '14pt'
-# 
-#     html = file_html(p, CDN, 'stock_prices_plot')
-#     new_html = add_link_to_plot(html)
-# 
-#     with open(os.path.join(TEMPLATES_DIR, 'closing_price_plot.html'), 'r+') as f:
-#         f.write(new_html)
-#         #f.write(file_html(p, CDN, 'stock_prices_plot'))
-# 
-# 
-# def add_link_to_plot(html_text):
-#     soup = Soup(html_text)
-#     # find last script
-#     all_scripts_list = soup.find_all('script')
-# 
-#     # create 'Back' button link
-#     new_tag = soup.new_tag('a', href='/index')
-#     new_tag.string = 'BACK'
-# 
-#     # insert new tag in html file
-#     all_scripts_list[0].insert_after(new_tag)
-# 
-#     return soup.prettify("utf-8")
-
-
 def get_plot_ticker_components(ticker, df_data):
-    plot_title = 'Last Month ' + ticker + ' Closing Price'
-    # output_file('stocks_timeseries.html', title=ticker + ' closing stock price')
+    plot_title = 'Last Month ' + ticker.upper() + ' Closing Price'
 
     p = TimeSeries(df_data, legend=True, title=plot_title, xlabel='Date', ylabel='Stock Prices')
     p.title.text_font_size = '14pt'
