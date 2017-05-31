@@ -6,7 +6,6 @@ from bokeh.charts import TimeSeries
 # from bokeh.resources import CDN
 from bokeh.embed import components
 
-from html_template import html
 
 
 def get_plot_ticker_components(ticker, df_data):
