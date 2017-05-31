@@ -24,15 +24,11 @@ def index():
                 ticker=ticker_input,
                 df_data=df_data
             )
-            
+
             return render_template('plot_template.html', script=script, div=div)
+
         else:
             return redirect('/error_page')
-
-
-# @app.route('/plot', methods=['GET', 'POST'])
-# def plot_stock():
-#     return render_template('plot_template.html')
 
 
 @app.route('/error_page', methods=['GET', 'POST'])
