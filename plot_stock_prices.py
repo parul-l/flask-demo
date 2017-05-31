@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup as Soup
 
 from config import TEMPLATES_DIR
 from bokeh.charts import TimeSeries
-from bokeh.resources import CDN
-from bokeh.embed import file_html, components
+# from bokeh.resources import CDN
+from bokeh.embed import components
 
 from html_template import html
 
@@ -53,7 +53,7 @@ def get_plot_ticker_components(ticker, df_data):
 
 def add_script_to_html(script, soup):
     # convert script to bs
-    soup_script = Soup(script)
+    soup_script = Soup(script, 'html.parser')
     # get contents
     script_content = soup_script.find('script').contents[0]
 
@@ -81,7 +81,7 @@ def add_div_to_html(div, soup):
     # add tags
     body_tag = soup.find('body')
     body_tag.insert(-1, outer_div_tag)
-    
+
     # get_div_tag1 = soup.find_all('div')
     # get_div_tag1[1].insert(0, outer_div_tag)
 
