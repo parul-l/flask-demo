@@ -29,9 +29,9 @@ def index():
             return redirect('/error_page')
 
 
-@app.route('/plot', methods=['GET', 'POST'])
-def plot_stock():
-    return render_template('plot_template.html')
+# @app.route('/plot', methods=['GET', 'POST'])
+# def plot_stock():
+#     return render_template('plot_template.html')
 
 
 @app.route('/error_page', methods=['GET', 'POST'])
