@@ -18,6 +18,7 @@ def convert_month_string(month):
 
 
 def get_date_range():
+
     current_month = datetime.datetime.now().month
     current_year = datetime.datetime.now().year
 
@@ -65,14 +66,14 @@ def get_data_df(
     base_params=base_params
 ):
     data = get_data(
-        ticker=ticker,
+        ticker=ticker.lower(),
         base_url=base_url,
         base_params=base_params
     )
     data_list = data['datatable']['data']
     column_headers = {
         'date',
-        ticker + '_closing_price'
+        'closing_price'
     }
 
     data_df = pd.DataFrame(

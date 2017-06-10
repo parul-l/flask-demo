@@ -1,8 +1,6 @@
 appdirs==1.4.3
 backports-abc==0.5
-beautifulsoup4==4.6.0
 bokeh==0.12.5
-bs4==0.0.1
 certifi==2017.4.17
 click==6.7
 Flask==0.12.2
