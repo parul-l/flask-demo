@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect
 import get_data as gd
 import plot_stock_prices as psp
