@@ -71,10 +71,10 @@ def get_data_df(
         base_params=base_params
     )
     data_list = data['datatable']['data']
-    column_headers = {
+    column_headers = [
         'date',
         'closing_price'
-    }
+    ]
 
     data_df = pd.DataFrame(
         data=data_list,
