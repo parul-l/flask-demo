@@ -29,7 +29,7 @@ def get_date_range():
         start_year = current_year - 1
 
     start_range = str(start_year) + \
-         convert_month_string(last_month) + '01'
+        convert_month_string(last_month) + '01'
     end_range = str(current_year) + \
         convert_month_string(current_month) + '01'
 
